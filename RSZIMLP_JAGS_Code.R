@@ -17,8 +17,8 @@ load(paste0("SimulatedData_RSZIMLP_",condition,"_N",N,"T",O,"_",r1,".Rdata"))
 
 
 jags_data <- list(Y = Y_obs, 
-                  P = dim(Y)[1],
-                  maxT = dim(Y)[2],
+                  P = dim(Y_obs)[1],
+                  maxT = dim(Y_obs)[2],
                   X = X_obs,
                   K = K)
 
@@ -157,3 +157,4 @@ resulttable <- zcalc(codaSamples)
 warns = warnings()
 
 save(warns, resulttable, file=paste0("Result_RSZIMLP_",condition,"_N",N,"T",O,"_",r1,".Rdata"))
+
